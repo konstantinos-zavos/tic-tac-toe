@@ -11,9 +11,13 @@ function test() {
 }
 
 const Player = (name) => {
+    const getName  = () => name;
     const sayName = () => console.log(`my name is ${name}`);
-    return {sayName};
+    return {sayName, getName};
 }
+
+const jim = Player('Jim');
+jim.sayName();
 
 //  I have created an array inside my object
 //  I have created a player object that just prints a name
