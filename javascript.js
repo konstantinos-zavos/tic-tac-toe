@@ -1,13 +1,14 @@
 const gameBoard = (() => {
-  const gameBoard = ["X", "O", "X"];
-  return {
+    const gameBoard = ["X", "O", "X"];
+    return {
     gameBoard
-  };
+    };
 })();
 
 function test() {
     let testArray = "?";
     gameBoard.gameBoard.push(testArray);
+    document.getElementById("arrPrint").innerHTML = JSON.stringify(gameBoard.gameBoard, null, 2);
 }
 
 const Player = (name) => {
