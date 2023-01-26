@@ -1,3 +1,4 @@
+// GameBoard Module (one of something)
 const gameBoard = (() => {
     const gameBoard = ["X", "O", "X"];
     return {
@@ -5,21 +6,8 @@ const gameBoard = (() => {
     };
 })();
 
-function test() {
-    let testArray = "1";
-    gameBoard.gameBoard.push(testArray);
-    document.getElementById("arrPrint").innerHTML = JSON.stringify(gameBoard.gameBoard, null, 2);
-}
 
-
-function addMarkToBlockOne() {
-    const block1 = document.querySelector('.block-1');
-    const content = document.createElement('div');
-    content.classList.add('content');
-    content.textContent = 'X';
-    block1.appendChild(content);
-}
-
+// Player Factory function (multiple of something)
 const Player = (name) => {
     const getName  = () => name;
     const sayName = () => console.log(`my name is ${name}`);
@@ -28,6 +16,20 @@ const Player = (name) => {
 
 const jim = Player('Jim');
 jim.sayName();
+
+function test() {
+    let testArray = "1";
+    gameBoard.gameBoard.push(testArray);
+    document.getElementById("arrPrint").innerHTML = JSON.stringify(gameBoard.gameBoard, null, 2);
+}
+
+function addMarkToBlockOne() {
+    const block1 = document.querySelector('.block-1');
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'X';
+    block1.appendChild(content);
+}
 
 //  I have created an array inside my object
 //  I have created a player object that just prints a name
