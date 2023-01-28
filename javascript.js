@@ -28,30 +28,94 @@ const gameBoard = (() => {
       block.id = "block";
       block.setAttribute("class", `block-${i}`);
       block.textContent = board[i];
-      block.setAttribute("onclick", "gameBoard.test()");
+      block.setAttribute("onclick", `test${i}()`);
       container.appendChild(block);
       i += 1;
     }
   };
-  const test = () => {
-    scoped();
-    // const playerToken = jim.getSymbol();
-    // gameBoard.board[1] = playerToken;
-  };
   return {
     board,
     generateBoard,
-    test,
   };
 })();
 
-function scoped() {
+// Create way to assign active player from game flow module into the array instead of specified jim.player
+
+
+
+function test0() {
+  // Find way to change to active player instead of jim.getSymbol();
+  const playerToken = jim.getSymbol();
+  gameBoard.board[0] = playerToken;
+  const container = document.querySelector(".game-container");
+  container.replaceChildren();
+  gameBoard.generateBoard();
+}
+
+function test1() {
+  const playerToken = jim.getSymbol();
+  gameBoard.board[1] = playerToken;
+  const container = document.querySelector(".game-container");
+  container.replaceChildren();
+  gameBoard.generateBoard();
+}
+
+function test2() {
+  const playerToken = jim.getSymbol();
+  gameBoard.board[2] = playerToken;
+  const container = document.querySelector(".game-container");
+  container.replaceChildren();
+  gameBoard.generateBoard();
+}
+
+function test3() {
   const playerToken = jim.getSymbol();
   gameBoard.board[3] = playerToken;
   const container = document.querySelector(".game-container");
   container.replaceChildren();
   gameBoard.generateBoard();
 }
+
+function test4() {
+  const playerToken = jim.getSymbol();
+  gameBoard.board[4] = playerToken;
+  const container = document.querySelector(".game-container");
+  container.replaceChildren();
+  gameBoard.generateBoard();
+}
+
+function test5() {
+  const playerToken = jim.getSymbol();
+  gameBoard.board[5] = playerToken;
+  const container = document.querySelector(".game-container");
+  container.replaceChildren();
+  gameBoard.generateBoard();
+}
+
+function test6() {
+  const playerToken = jim.getSymbol();
+  gameBoard.board[6] = playerToken;
+  const container = document.querySelector(".game-container");
+  container.replaceChildren();
+  gameBoard.generateBoard();
+}
+
+function test7() {
+  const playerToken = jim.getSymbol();
+  gameBoard.board[7] = playerToken;
+  const container = document.querySelector(".game-container");
+  container.replaceChildren();
+  gameBoard.generateBoard();
+}
+
+function test8() {
+  const playerToken = jim.getSymbol();
+  gameBoard.board[8] = playerToken;
+  const container = document.querySelector(".game-container");
+  container.replaceChildren();
+  gameBoard.generateBoard();
+}
+
 
 gameBoard.generateBoard();
 
