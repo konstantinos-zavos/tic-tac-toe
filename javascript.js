@@ -1,10 +1,35 @@
+/* eslint-disable no-console */
 // GameBoard Module (one of something)
+
 const gameBoard = (() => {
-  const board = ["X", "O", "X", "another one?", "another one"];
+  const board = ["X", "O", "X", "O", "X", "X", "O", "X", "x"];
+  const generateBoard = () => {
+    
+let i = 0;
+while (i < board.length) {
+    console.log(board[i]);
+    const container = document.querySelector(".game-container");
+    const block = document.createElement("div");
+    block.id = "block";
+    block.setAttribute("class", `block-${i}`);
+    container.appendChild(block);
+    i++;
+}
+  };
   return {
     board,
+    generateBoard,
   };
 })();
+
+function startGenerate() {
+  return gameBoard.generateBoard();
+}
+
+startGenerate();
+
+//  same idea from below : (First create loop that generates a div from each array string) then --I want to generate grid on DOM from array, I already have the CSS ready)
+// idea : if player1 click gameboard.board[3] then show X on DOM-box-[3] then change turn to player 2
 
 const game = () => {};
 
@@ -15,8 +40,8 @@ const Player = (name) => {
   return { sayName, getName };
 };
 
-const jim = Player("Jim");
-jim.sayName();
+// const jim = Player("Jim");
+// jim.sayName();
 
 function test() {
   const testArray = "1";
@@ -36,11 +61,4 @@ function addMarkToBlockOne() {
   block1.appendChild(content);
 }
 
-//  I have created an array inside my object
-//  I have created a player object that just prints a name
-//  pushing items in the array inside the object
-//  gameBoard.gameBoard.push(testArray); This work with strings
-//  If you push an array it will push another array inside the array
-// I want to create functions that insert X or O on DOM elements
-
-// Game should start with player 1 and X (white piece) and then O (black pieces)
+// Show grid generated from the array
