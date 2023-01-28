@@ -47,91 +47,112 @@ gameBoard.generateBoard();
 // Figure out where each piece of logic fits
 
 const gameController = (() => {
-  const activePlayer = jim.getName();
-  const ShowActivePlayer = () => {
-    console.log("Active player successfully shown on DOM");
-    const container = document.querySelector("body");
-    const block = document.createElement("div");
-    block.textContent = `${activePlayer}'s turn`;
+  const player = ["X", "O"];
+  const names = ["Jim", "Bob"];
+  let activePlayer = player[0];
+  let activePlayerName = names[0];
+  const container = document.querySelector("body");
+  const block = document.createElement("div");
+  const changeTurn = () => {
+    activePlayer = activePlayer === player[0] ? player[1] : player[0]
+    activePlayerName = activePlayerName === names[0] ? names[1] : names[0]
+    block.textContent = `${activePlayerName}'s turn`;
     container.appendChild(block);
+    console.log(`${activePlayer}`);
+  };
+  const getActivePlayer = () => activePlayer;
+
+  const ShowActivePlayerName = () => {
+    block.textContent = `${activePlayerName}'s turn`;
+    container.appendChild(block);
+    console.log("Active player successfully shown on DOM");
   };
   return {
-    ShowActivePlayer,
+    ShowActivePlayerName,
+    changeTurn,
+    getActivePlayer,
   };
 })();
 
-gameController.ShowActivePlayer();
+gameController.ShowActivePlayerName();
 
 function test0() {
-  // Find way to change to active player instead of jim.getSymbol();
-  const playerToken = gameController.getActivePlayer;
-  // jim.getSymbol();
+  const playerToken = gameController.getActivePlayer();
   gameBoard.board[0] = playerToken;
   const container = document.querySelector(".game-container");
   container.replaceChildren();
   gameBoard.generateBoard();
+  gameController.changeTurn();
 }
 
 function test1() {
-  const playerToken = jim.getSymbol();
+  const playerToken = gameController.getActivePlayer();
   gameBoard.board[1] = playerToken;
   const container = document.querySelector(".game-container");
   container.replaceChildren();
   gameBoard.generateBoard();
+  gameController.changeTurn();
 }
 
 function test2() {
-  const playerToken = jim.getSymbol();
+  const playerToken = gameController.getActivePlayer();
   gameBoard.board[2] = playerToken;
   const container = document.querySelector(".game-container");
   container.replaceChildren();
   gameBoard.generateBoard();
+  gameController.changeTurn();
 }
 
 function test3() {
-  const playerToken = jim.getSymbol();
+  const playerToken = gameController.getActivePlayer();
   gameBoard.board[3] = playerToken;
   const container = document.querySelector(".game-container");
   container.replaceChildren();
   gameBoard.generateBoard();
+  gameController.changeTurn();
 }
 
 function test4() {
-  const playerToken = jim.getSymbol();
+  const playerToken = gameController.getActivePlayer();
   gameBoard.board[4] = playerToken;
   const container = document.querySelector(".game-container");
   container.replaceChildren();
   gameBoard.generateBoard();
+  gameController.changeTurn();
 }
 
 function test5() {
-  const playerToken = jim.getSymbol();
+  const playerToken = gameController.getActivePlayer();
   gameBoard.board[5] = playerToken;
   const container = document.querySelector(".game-container");
   container.replaceChildren();
   gameBoard.generateBoard();
+  gameController.changeTurn();
 }
 
 function test6() {
-  const playerToken = jim.getSymbol();
+  const playerToken = gameController.getActivePlayer();
   gameBoard.board[6] = playerToken;
   const container = document.querySelector(".game-container");
   container.replaceChildren();
   gameBoard.generateBoard();
+  gameController.changeTurn();
 }
 
 function test7() {
-  const playerToken = jim.getSymbol();
+  const playerToken = gameController.getActivePlayer();
   gameBoard.board[7] = playerToken;
   const container = document.querySelector(".game-container");
   container.replaceChildren();
   gameBoard.generateBoard();
+  gameController.changeTurn();
 }
 
 function test8() {
-  const playerToken = jim.getSymbol();
+  const playerToken = gameController.getActivePlayer();
   gameBoard.board[8] = playerToken;
   const container = document.querySelector(".game-container");
   container.replaceChildren();
   gameBoard.generateBoard();
+  gameController.changeTurn();
 }
