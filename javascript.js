@@ -2,7 +2,7 @@
 // GameBoard Module (one of something)
 
 const gameBoard = (() => {
-  const board = ["X", "O", "X", "O", "X", "x", "O", "X", "x"];
+  const board = ["X", "O", "X", "O", "X", "X", "O", "X", "X"];
   const generateBoard = () => { 
     let i = 0;
     while (i < board.length) {
@@ -11,6 +11,7 @@ const gameBoard = (() => {
       const block = document.createElement("div");
       block.id = "block";
       block.setAttribute("class", `block-${i}`);
+      block.textContent = board[i];
       container.appendChild(block);
       i += 1;
     }
@@ -22,6 +23,15 @@ const gameBoard = (() => {
 })();
 
 gameBoard.generateBoard();
+
+function placeMark() {
+  const btn = document.querySelector('#btn');
+  btn.addEventListener('click', () => {
+  console.log("Hello World");
+  });
+}
+
+
 
 //  same idea from below : (First create loop that generates a div from each array string) then --I want to generate grid on DOM from array, I already have the CSS ready)
 // idea : if player1 click gameboard.board[3] then show X on DOM-box-[3] then change turn to player 2
