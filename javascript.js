@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 
 // Factory function
@@ -46,15 +47,20 @@ gameBoard.generateBoard();
 // Figure out where each piece of logic fits
 
 const gameController = (() => {
-  const activePlayer = () =>{
-    console.log("Working function which shows activePlayer")
+  const activePlayer = jim.getName();
+  const ShowActivePlayer = () => {
+    console.log("Active player successfully shown on DOM");
+    const container = document.querySelector("body");
+    const block = document.createElement("div");
+    block.textContent = `${activePlayer}'s turn`;
+    container.appendChild(block);
   };
-return {
-  activePlayer,
-};
+  return {
+    ShowActivePlayer,
+  };
 })();
 
-
+gameController.ShowActivePlayer();
 
 function test0() {
   // Find way to change to active player instead of jim.getSymbol();
@@ -129,5 +135,3 @@ function test8() {
   container.replaceChildren();
   gameBoard.generateBoard();
 }
-
-
