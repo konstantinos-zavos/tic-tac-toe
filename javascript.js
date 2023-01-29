@@ -185,14 +185,12 @@ const gameBoard = (() => {
         "style",
         "animation-name: myAnimation;animation-duration: 2000ms;animation-fill-mode: forwards;"
       );
-      const body = document.querySelector("body")
+      const body = document.querySelector("body");
       const block = document.createElement("div");
       block.id = "test-block";
-      block.textContent = "DRAW!";
-      // block.setAttribute(
-      //   "style",
-      //   "position: fixed;transform: translateX(-50%);left: 50%;border: 3px solid #73AD21;padding: 200px; font-size: 40px;"
-      // );
+      block.textContent = "DRAW";
+      const removeTurn = document.querySelector("#active-player");
+      removeTurn.setAttribute("style", "display:none;");
       body.appendChild(block);
       console.log("It's a draw bro!");
     }
