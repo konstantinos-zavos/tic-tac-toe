@@ -107,23 +107,74 @@ const gameBoard = (() => {
       console.log("Winner - X - row");
     }
     // O row
-    else if (
-      (board[0] === "O" && board[1] === "O" && board[2] === "O") ||
-      (board[3] === "O" && board[4] === "O" && board[5] === "O") ||
-      (board[6] === "O" && board[7] === "O" && board[8] === "O")
-    ) {
-      console.log("winner - O - row");
-    } else if (
-      (board[0] === "O" && board[3] === "O" && board[6] === "O") ||
-      (board[1] === "O" && board[4] === "O" && board[7] === "O") ||
-      (board[2] === "O" && board[5] === "O" && board[8] === "O")
-    ) {
-      console.log("winner - o - column");
-    } else if (
-      (board[0] === "O" && board[4] === "O" && board[8] === "O") ||
-      (board[6] === "O" && board[4] === "O" && board[2] === "O")
-    ) {
-      console.log("winner - o - diagonal");
+    else if (board[0] === "O" && board[1] === "O" && board[2] === "O") {
+      const div0 = document.querySelector(".block-0");
+      div0.setAttribute("style", "color: white; background: green; ");
+      const div1 = document.querySelector(".block-1");
+      div1.setAttribute("style", "color: white; background: green;");
+      const div2 = document.querySelector(".block-2");
+      div2.setAttribute("style", "color: white; background: green;");
+      console.log("Winner - O - row");
+    } else if (board[3] === "O" && board[4] === "O" && board[5] === "O") {
+      const div3 = document.querySelector(".block-3");
+      div3.setAttribute("style", "color: white; background: green;");
+      const div4 = document.querySelector(".block-4");
+      div4.setAttribute("style", "color: white; background: green;");
+      const div5 = document.querySelector(".block-5");
+      div5.setAttribute("style", "color: white; background: green;");
+      console.log("Winner - O - row");
+    } else if (board[6] === "O" && board[7] === "O" && board[8] === "O") {
+      const div6 = document.querySelector(".block-6");
+      div6.setAttribute("style", "color: white; background: green;");
+      const div7 = document.querySelector(".block-7");
+      div7.setAttribute("style", "color: white; background: green;");
+      const div8 = document.querySelector(".block-8");
+      div8.setAttribute("style", "color: white; background: green;");
+      console.log("Winner - O - row");
+    }
+    // O column
+    else if (board[0] === "O" && board[3] === "O" && board[6] === "O") {
+      const div0 = document.querySelector(".block-0");
+      div0.setAttribute("style", "color: white; background: green;");
+      const div3 = document.querySelector(".block-3");
+      div3.setAttribute("style", "color: white; background: green;");
+      const div6 = document.querySelector(".block-6");
+      div6.setAttribute("style", "color: white; background: green;");
+      console.log("Winner - O - row");
+    } else if (board[1] === "O" && board[4] === "O" && board[7] === "O") {
+      const div1 = document.querySelector(".block-1");
+      div1.setAttribute("style", "color: white; background: green;");
+      const div4 = document.querySelector(".block-4");
+      div4.setAttribute("style", "color: white; background: green;");
+      const div7 = document.querySelector(".block-7");
+      div7.setAttribute("style", "color: white; background: green;");
+      console.log("Winner - O - row");
+    } else if (board[2] === "O" && board[5] === "O" && board[8] === "O") {
+      const div2 = document.querySelector(".block-2");
+      div2.setAttribute("style", "color: white; background: green;");
+      const div5 = document.querySelector(".block-5");
+      div5.setAttribute("style", "color: white; background: green;");
+      const div8 = document.querySelector(".block-8");
+      div8.setAttribute("style", "color: white; background: green;");
+      console.log("winner - O - column");
+    }
+    // O diagonal
+    else if (board[0] === "O" && board[4] === "O" && board[8] === "O") {
+      const div0 = document.querySelector(".block-0");
+      div0.setAttribute("style", "color: white; background: green;");
+      const div4 = document.querySelector(".block-4");
+      div4.setAttribute("style", "color: white; background: green;");
+      const div8 = document.querySelector(".block-8");
+      div8.setAttribute("style", "color: white; background: green;");
+      console.log("Winner - O - row");
+    } else if (board[6] === "O" && board[4] === "O" && board[2] === "O") {
+      const div6 = document.querySelector(".block-6");
+      div6.setAttribute("style", "color: white; background: green;");
+      const div4 = document.querySelector(".block-4");
+      div4.setAttribute("style", "color: white; background: green;");
+      const div2 = document.querySelector(".block-2");
+      div2.setAttribute("style", "color: white; background: green;");
+      console.log("Winner - O - row");
     } else {
       console.log("no winner");
     }
