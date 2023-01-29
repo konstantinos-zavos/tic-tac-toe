@@ -167,9 +167,22 @@ const gameBoard = (() => {
       const div2 = document.querySelector(".block-2");
       div2.setAttribute("style", "color: white; background: green;");
       console.log("Winner - O - row");
+    } 
+    // Draw condition
+    else if (
+      board[0] !== " " &&
+      board[1] !== " " &&
+      board[2] !== " " &&
+      board[3] !== " " &&
+      board[4] !== " " &&
+      board[5] !== " " &&
+      board[6] !== " " &&
+      board[7] !== " " &&
+      board[8] !== " "
+    ) {
+      console.log("It's a draw bro!");
     }
   };
-
   return {
     board,
     generateBoard,
