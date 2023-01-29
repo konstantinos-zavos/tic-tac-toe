@@ -85,22 +85,19 @@ const gameBoard = (() => {
       const div5 = document.querySelector(".block-5");
       div5.setAttribute("style", "color: white; background: green;");
       const div8 = document.querySelector(".block-8");
-      div2.setAttribute("style", "color: white; background: green;");
+      div8.setAttribute("style", "color: white; background: green;");
       console.log("winner - X - column");
-    } 
+    }
     // x diagonal
-    else if (
-      (board[0] === "X" && board[4] === "X" && board[8] === "X") ) {
-        const div0 = document.querySelector(".block-0");
-        div0.setAttribute("style", "color: white; background: green;");
-        const div4 = document.querySelector(".block-4");
-        div4.setAttribute("style", "color: white; background: green;");
-        const div8 = document.querySelector(".block-8");
-        div8.setAttribute("style", "color: white; background: green;");
-        console.log("Winner - X - row");
-      } else if (
-      (board[6] === "X" && board[4] === "X" && board[2] === "X") 
-    ) {
+    else if (board[0] === "X" && board[4] === "X" && board[8] === "X") {
+      const div0 = document.querySelector(".block-0");
+      div0.setAttribute("style", "color: white; background: green;");
+      const div4 = document.querySelector(".block-4");
+      div4.setAttribute("style", "color: white; background: green;");
+      const div8 = document.querySelector(".block-8");
+      div8.setAttribute("style", "color: white; background: green;");
+      console.log("Winner - X - row");
+    } else if (board[6] === "X" && board[4] === "X" && board[2] === "X") {
       const div6 = document.querySelector(".block-6");
       div6.setAttribute("style", "color: white; background: green;");
       const div4 = document.querySelector(".block-4");
@@ -108,7 +105,7 @@ const gameBoard = (() => {
       const div2 = document.querySelector(".block-2");
       div2.setAttribute("style", "color: white; background: green;");
       console.log("Winner - X - row");
-    } 
+    }
     // O row
     else if (
       (board[0] === "O" && board[1] === "O" && board[2] === "O") ||
