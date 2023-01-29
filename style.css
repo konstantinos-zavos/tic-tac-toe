@@ -41,14 +41,39 @@ body {
     font-size: 3vh;
 }
 
-@keyframes myAnimation{
+@keyframes myAnimation {
     0%{
       opacity: 1;
     }
     50%{
-      opacity: 0.7;
+      opacity: 0.3;
     }
     100%{
-      opacity: 0.2;
+      opacity: 0;
     }
-  }
+}
+
+  @keyframes Reverse {
+    0%{
+      opacity: 0;
+    }
+    50%{
+      opacity: 0.5;
+    }
+    100%{
+      opacity: 1;
+    }
+}
+
+#test-block {
+    background-color: rgba(0, 255, 255, 0.336);
+    position: fixed;
+    transform: translateX(-50%);
+    left: 50%;
+    border: 3px solid #73AD21;
+    padding: 200px; 
+    font-size: 40px;
+    animation-name: Reverse;
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+}

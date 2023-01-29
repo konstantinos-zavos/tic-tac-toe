@@ -167,7 +167,7 @@ const gameBoard = (() => {
       const div2 = document.querySelector(".block-2");
       div2.setAttribute("style", "color: white; background: green;");
       console.log("Winner - O - row");
-    } 
+    }
     // Draw condition
     else if (
       board[0] !== " " &&
@@ -181,7 +181,19 @@ const gameBoard = (() => {
       board[8] !== " "
     ) {
       const container = document.querySelector(".game-container");
-      container.setAttribute("style", "animation-name: myAnimation;animation-duration: 2000ms;animation-fill-mode: forwards;")
+      container.setAttribute(
+        "style",
+        "animation-name: myAnimation;animation-duration: 2000ms;animation-fill-mode: forwards;"
+      );
+      const body = document.querySelector("body")
+      const block = document.createElement("div");
+      block.id = "test-block";
+      block.textContent = "DRAW!";
+      // block.setAttribute(
+      //   "style",
+      //   "position: fixed;transform: translateX(-50%);left: 50%;border: 3px solid #73AD21;padding: 200px; font-size: 40px;"
+      // );
+      body.appendChild(block);
       console.log("It's a draw bro!");
     }
   };
