@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 
-// Factory function
-
 const Player = (name, symbol) => {
   const getName = () => name;
   const getSymbol = () => symbol;
@@ -13,12 +11,6 @@ const Player = (name, symbol) => {
 
 const jim = Player("Jim", "X");
 const bob = Player("Bob", "O");
-jim.sayName();
-jim.saySymbol();
-bob.sayName();
-bob.saySymbol();
-
-// GameBoard Module (one of something)
 
 const gameBoard = (() => {
   const board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
@@ -175,8 +167,6 @@ const gameBoard = (() => {
       const div2 = document.querySelector(".block-2");
       div2.setAttribute("style", "color: white; background: green;");
       console.log("Winner - O - row");
-    } else {
-      console.log("no winner");
     }
   };
 
@@ -189,8 +179,6 @@ const gameBoard = (() => {
 
 gameBoard.generateBoard();
 gameBoard.winnerCheck();
-// Game flow module (one of something)
-// Figure out where each piece of logic fits
 
 const gameController = (() => {
   const player = ["X", "O"];
@@ -205,14 +193,12 @@ const gameController = (() => {
     activePlayerName = activePlayerName === names[0] ? names[1] : names[0];
     block.textContent = `${activePlayerName}'s turn`;
     container.appendChild(block);
-    console.log(`${activePlayer}`);
   };
   const getActivePlayer = () => activePlayer;
 
   const ShowActivePlayerName = () => {
     block.textContent = `${activePlayerName}'s turn`;
     container.appendChild(block);
-    console.log("Active player successfully shown on DOM");
   };
   return {
     ShowActivePlayerName,
