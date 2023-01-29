@@ -192,6 +192,11 @@ const gameBoard = (() => {
       const removeTurn = document.querySelector("#active-player");
       removeTurn.setAttribute("style", "display:none;");
       body.appendChild(block);
+
+      const testBlockDiv = document.querySelector("#test-block");
+      const button = document.createElement("button");
+      button.textContent = "Play again?";
+      testBlockDiv.appendChild(button);
       console.log("It's a draw bro!");
     }
   };
