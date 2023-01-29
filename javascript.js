@@ -35,14 +35,29 @@ const gameBoard = (() => {
       i += 1;
     }
   };
+  const winnerCheck = () => {
+    if (board[0] === "X" && board[1] === "X" && board[2] === "X" || 
+    board[3] === "X" && board[4] === "X" && board[5] === "X" || 
+    board[6] === "X" && board[7] === "X" && board[8] === "X" ) {
+      console.log("Winner - row");
+    } else if (board[0] === "X" && board[3] === "X" && board[6] ||
+      board[1] === "X" && board[4] === "X" && board[7] ||
+      board[2] === "X" && board[5] === "X" && board[8]) {
+      console.log("winner - column");
+    } else {
+      console.log("no winner")
+    }
+}
+
   return {
     board,
     generateBoard,
+    winnerCheck,
   };
 })();
 
 gameBoard.generateBoard();
-
+gameBoard.winnerCheck();
 // Game flow module (one of something)
 // Figure out where each piece of logic fits
 
@@ -84,6 +99,7 @@ function test0() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
+  gameBoard.winnerCheck();
 }
 
 function test1() {
@@ -93,6 +109,7 @@ function test1() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
+  gameBoard.winnerCheck();
 }
 
 function test2() {
@@ -102,6 +119,7 @@ function test2() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
+  gameBoard.winnerCheck();
 }
 
 function test3() {
@@ -111,6 +129,7 @@ function test3() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
+  gameBoard.winnerCheck();
 }
 
 function test4() {
@@ -120,6 +139,7 @@ function test4() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
+  gameBoard.winnerCheck();
 }
 
 function test5() {
@@ -129,6 +149,7 @@ function test5() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
+  gameBoard.winnerCheck();
 }
 
 function test6() {
@@ -138,6 +159,7 @@ function test6() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
+  gameBoard.winnerCheck();
 }
 
 function test7() {
@@ -147,6 +169,7 @@ function test7() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
+  gameBoard.winnerCheck();
 }
 
 function test8() {
@@ -156,4 +179,5 @@ function test8() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
+  gameBoard.winnerCheck();
 }
