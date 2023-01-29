@@ -36,18 +36,27 @@ const gameBoard = (() => {
     }
   };
   const winnerCheck = () => {
-    if (board[0] === "X" && board[1] === "X" && board[2] === "X" || 
-    board[3] === "X" && board[4] === "X" && board[5] === "X" || 
-    board[6] === "X" && board[7] === "X" && board[8] === "X" ) {
+    if (
+      (board[0] === "X" && board[1] === "X" && board[2] === "X") ||
+      (board[3] === "X" && board[4] === "X" && board[5] === "X") ||
+      (board[6] === "X" && board[7] === "X" && board[8] === "X")
+    ) {
       console.log("Winner - row");
-    } else if (board[0] === "X" && board[3] === "X" && board[6] ||
-      board[1] === "X" && board[4] === "X" && board[7] ||
-      board[2] === "X" && board[5] === "X" && board[8]) {
+    } else if (
+      (board[0] === "X" && board[3] === "X" && board[6] === "X") ||
+      (board[1] === "X" && board[4] === "X" && board[7] === "X") ||
+      (board[2] === "X" && board[5] === "X" && board[8] === "X")
+    ) {
       console.log("winner - column");
+    } else if (
+      (board[0] === "X" && board[4] === "X" && board[8] === "X") ||
+      (board[6] === "X" && board[4] === "X" && board[2] === "X")
+    ) {
+      console.log("winner - diagonal");
     } else {
-      console.log("no winner")
+      console.log("no winner");
     }
-}
+  };
 
   return {
     board,
