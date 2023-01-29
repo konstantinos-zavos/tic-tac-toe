@@ -41,6 +41,12 @@ const gameBoard = (() => {
       (board[3] === "X" && board[4] === "X" && board[5] === "X") ||
       (board[6] === "X" && board[7] === "X" && board[8] === "X")
     ) {
+      const div0 = document.querySelector(".block-0");
+      div0.setAttribute('style', 'color: white; background: green;' )
+      const div1 = document.querySelector(".block-1");
+      div1.setAttribute('style', 'color: white; background: green;');
+      const div2 = document.querySelector(".block-2");
+      div2.setAttribute('style', 'color: white; background: green;');    
       console.log("Winner - X - row");
     } else if (
       (board[0] === "X" && board[3] === "X" && board[6] === "X") ||
@@ -48,6 +54,7 @@ const gameBoard = (() => {
       (board[2] === "X" && board[5] === "X" && board[8] === "X")
     ) {
       console.log("winner - X - column");
+      
     } else if (
       (board[0] === "X" && board[4] === "X" && board[8] === "X") ||
       (board[6] === "X" && board[4] === "X" && board[2] === "X")
