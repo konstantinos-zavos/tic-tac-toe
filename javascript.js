@@ -36,17 +36,29 @@ const gameBoard = (() => {
     }
   };
   const winnerCheck = () => {
-    if (
-      (board[0] === "X" && board[1] === "X" && board[2] === "X") ||
-      (board[3] === "X" && board[4] === "X" && board[5] === "X") ||
-      (board[6] === "X" && board[7] === "X" && board[8] === "X")
-    ) {
+    if (board[0] === "X" && board[1] === "X" && board[2] === "X") {
       const div0 = document.querySelector(".block-0");
-      div0.setAttribute('style', 'color: white; background: green;' )
+      div0.setAttribute("style", "color: white; background: green;");
       const div1 = document.querySelector(".block-1");
-      div1.setAttribute('style', 'color: white; background: green;');
+      div1.setAttribute("style", "color: white; background: green;");
       const div2 = document.querySelector(".block-2");
-      div2.setAttribute('style', 'color: white; background: green;');    
+      div2.setAttribute("style", "color: white; background: green;");
+      console.log("Winner - X - row");
+    } else if (board[3] === "X" && board[4] === "X" && board[5] === "X") {
+      const div3 = document.querySelector(".block-3");
+      div3.setAttribute("style", "color: white; background: green;");
+      const div4 = document.querySelector(".block-4");
+      div4.setAttribute("style", "color: white; background: green;");
+      const div5 = document.querySelector(".block-5");
+      div5.setAttribute("style", "color: white; background: green;");
+      console.log("Winner - X - row");
+    } else if (board[6] === "X" && board[7] === "X" && board[8] === "X") {
+      const div6 = document.querySelector(".block-6");
+      div6.setAttribute("style", "color: white; background: green;");
+      const div7 = document.querySelector(".block-7");
+      div7.setAttribute("style", "color: white; background: green;");
+      const div8 = document.querySelector(".block-8");
+      div8.setAttribute("style", "color: white; background: green;");
       console.log("Winner - X - row");
     } else if (
       (board[0] === "X" && board[3] === "X" && board[6] === "X") ||
@@ -54,7 +66,6 @@ const gameBoard = (() => {
       (board[2] === "X" && board[5] === "X" && board[8] === "X")
     ) {
       console.log("winner - X - column");
-      
     } else if (
       (board[0] === "X" && board[4] === "X" && board[8] === "X") ||
       (board[6] === "X" && board[4] === "X" && board[2] === "X")
