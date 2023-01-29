@@ -21,12 +21,22 @@ body {
 }
 
 #block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid black;
     padding: 30px;
+    min-height: 100px;
+    min-width: 100px;
+    font-size: 7vh;
 }
 
 #block:hover {
     border: 1px solid black;
     padding: 30px;
     background-color: rgba(255, 0, 0, 0.205);
+}
+
+#active-player {
+    font-size: 3vh;
 }

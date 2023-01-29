@@ -21,7 +21,7 @@ bob.saySymbol();
 // GameBoard Module (one of something)
 
 const gameBoard = (() => {
-  const board = [" ", " ", "X", " ", " ", " ", "X", " ", " "];
+  const board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
   const generateBoard = () => {
     let i = 0;
     while (i < board.length) {
@@ -53,9 +53,10 @@ const gameController = (() => {
   let activePlayerName = names[0];
   const container = document.querySelector("body");
   const block = document.createElement("div");
+  block.id = "active-player";
   const changeTurn = () => {
-    activePlayer = activePlayer === player[0] ? player[1] : player[0]
-    activePlayerName = activePlayerName === names[0] ? names[1] : names[0]
+    activePlayer = activePlayer === player[0] ? player[1] : player[0];
+    activePlayerName = activePlayerName === names[0] ? names[1] : names[0];
     block.textContent = `${activePlayerName}'s turn`;
     container.appendChild(block);
     console.log(`${activePlayer}`);
