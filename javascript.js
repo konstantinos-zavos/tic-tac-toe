@@ -180,6 +180,8 @@ const gameBoard = (() => {
       board[7] !== " " &&
       board[8] !== " "
     ) {
+      const container = document.querySelector(".game-container");
+      container.setAttribute("style", "animation-name: myAnimation;animation-duration: 2000ms;animation-fill-mode: forwards;")
       console.log("It's a draw bro!");
     }
   };

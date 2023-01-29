@@ -40,3 +40,15 @@ body {
 #active-player {
     font-size: 3vh;
 }
+
+@keyframes myAnimation{
+    0%{
+      opacity: 1;
+    }
+    50%{
+      opacity: 0.7;
+    }
+    100%{
+      opacity: 0.2;
+    }
+  }
