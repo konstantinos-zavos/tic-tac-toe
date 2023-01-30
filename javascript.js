@@ -12,11 +12,6 @@ const Player = (name, symbol) => {
 const jim = Player("Jim", "X");
 const bob = Player("Bob", "O");
 
-
-// block.textContent = board[i];
-// block.setAttribute("onclick", `test${i}()`);
-// Goal : otan o user kanei click sto element tote 
-
 const gameBoard = (() => {
   const board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
   const generateBoard = () => {
@@ -31,36 +26,6 @@ const gameBoard = (() => {
       i += 1;
     }
   };
-  // const placeSymbol = () => {
-  //   if (board[0] === "X" || board[0] === "O") {
-  //     const block = document.querySelector(".block-0");
-  //     block.textContent = gameBoard.board[0];
-  //   } else if (board[1] === "X" || board[1] === "O") {
-  //     const block = document.querySelector(".block-1");
-  //     block.textContent = board[1];
-  //   } else if (board[2] === "X" || board[2] === "O") {
-  //     const block = document.querySelector(".block-2");
-  //     block.textContent = board[2];
-  //   } else if (board[3] === "X" || board[3] === "O") {
-  //     const block = document.querySelector(".block-3");
-  //     block.textContent = board[3];
-  //   } else if (board[4] === "X" || board[4] === "O") {
-  //     const block = document.querySelector(".block-4");
-  //     block.textContent = board[4];
-  //   } else if (board[5] === "X" || board[5] === "O") {
-  //     const block = document.querySelector(".block-5");
-  //     block.textContent = board[5];
-  //   } else if (board[6] === "X" || board[6] === "O") {
-  //     const block = document.querySelector(".block-6");
-  //     block.textContent = board[6];
-  //   } else if (board[7] === "X" || board[7] === "O") {
-  //     const block = document.querySelector(".block-7");
-  //     block.textContent = board[7];
-  //   } else if (board[8] === "X" || board[8] === "O") {
-  //     const block = document.querySelector(".block-8");
-  //     block.textContent = board[8];
-  //   }
-  // };
   const winnerCheck = () => {
     // x row
     if (board[0] === "X" && board[1] === "X" && board[2] === "X") {
@@ -234,37 +199,6 @@ const gameBoard = (() => {
       console.log("It's a draw bro!");
     }
   };
-  // const preventDuplicate = () => {
-  //   // Prevent symbol change
-  // //   if (board[0] === "X" || board[0] === "O") {
-  // //     const disable = document.querySelector(".block-0");
-  // //     disable.id = "block-disabled";
-  // //   } else if (board[1] === "X" || board[1] === "O") {
-  // //     const disable = document.querySelector(".block-1");
-  // //     disable.id = "block-disabled";
-  // //   } else if (board[2] === "X" || board[2] === "O") {
-  // //     const disable = document.querySelector(".block-2");
-  // //     disable.id = "block-disabled";
-  // //   } else if (board[3] === "X" || board[3] === "O") {
-  // //     const disable = document.querySelector(".block-3");
-  // //     disable.id = "block-disabled";
-  // //   } else if (board[4] === "X" || board[4] === "O") {
-  // //     const disable = document.querySelector(".block-4");
-  // //     disable.id = "block-disabled";
-  // //   } else if (board[5] === "X" || board[5] === "O") {
-  // //     const disable = document.querySelector(".block-5");
-  // //     disable.id = "block-disabled";
-  // //   } else if (board[6] === "X" || board[6] === "O") {
-  // //     const disable = document.querySelector(".block-6");
-  // //     disable.id = "block-disabled";
-  // //   } else if (board[7] === "X" || board[7] === "O") {
-  // //     const disable = document.querySelector(".block-7");
-  // //     disable.id = "block-disabled";
-  // //   } else if (board[8] === "X" || board[8] === "O") {
-  // //     const disable = document.querySelector(".block-8");
-  // //     disable.id = "block-disabled";
-  // //   }
-  // };
   return {
     board,
     generateBoard,
