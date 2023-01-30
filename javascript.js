@@ -19,7 +19,7 @@ const gameBoard = (() => {
     const container = document.querySelector(".game-container");
       container.setAttribute(
         "style",
-        "animation-name: myAnimation;animation-duration: 2000ms;animation-fill-mode: forwards;background-color:red;"
+        "animation-name: myAnimation;animation-duration: 5000ms;animation-fill-mode: forwards;"
       );
       const body = document.querySelector("body");
       const block = document.createElement("div");
@@ -34,7 +34,7 @@ const gameBoard = (() => {
     const container = document.querySelector(".game-container");
       container.setAttribute(
         "style",
-        "animation-name: myAnimation;animation-duration: 2000ms;animation-fill-mode: forwards;background-color:red;"
+        "animation-name: myAnimation;animation-duration: 5000ms;animation-fill-mode: forwards;"
       );
       const body = document.querySelector("body");
       const block = document.createElement("div");
