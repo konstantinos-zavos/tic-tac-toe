@@ -16,6 +16,24 @@ body {
     background-color: rgba(255, 30, 0, 0.048);
 }
 
+.main {
+  display: flex;
+}
+
+.score-display {
+  display: flex;
+}
+
+.player-one-window {
+  height: 100%;
+  width: 100%;
+}
+
+.player-two-window {
+  height: 100%;
+  width: 100%;
+}
+
 .game-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

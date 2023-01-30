@@ -280,7 +280,7 @@ const gameController = (() => {
   names[1] = prompt("Player 2 name?");
   let activePlayer = player[0];
   let activePlayerName = names[0];
-  const container = document.querySelector("body");
+  const container = document.querySelector(".score-display");
   const block = document.createElement("div");
   block.id = "active-player";
   const changeTurn = () => {
