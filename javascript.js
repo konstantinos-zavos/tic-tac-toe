@@ -198,41 +198,44 @@ const gameBoard = (() => {
       button.textContent = "Play again?";
       testBlockDiv.appendChild(button);
       console.log("It's a draw bro!");
-    } 
+    }
+  };
+  const preventDuplicate = () => {
     // Prevent symbol change
-    else if (board[0] === "X" || board[0] === "O" ) {
+    if (board[0] === "X" || board[0] === "O") {
       const disable = document.querySelector(".block-0");
-      disable.setAttribute("style", "pointer-events:none;");
-    } else if (board[1] === "X" || board[1] === "O" ) {
+      disable.id = "block-disabled";
+    } else if (board[1] === "X" || board[1] === "O") {
       const disable = document.querySelector(".block-1");
-      disable.setAttribute("style", "pointer-events:none;");
-    } else if (board[2] === "X" || board[2] === "O" ) {
+      disable.id = "block-disabled";
+    } else if (board[2] === "X" || board[2] === "O") {
       const disable = document.querySelector(".block-2");
-      disable.setAttribute("style", "pointer-events:none;");
-    } else if (board[3] === "X" || board[3] === "O" ) {
+      disable.id = "block-disabled";
+    } else if (board[3] === "X" || board[3] === "O") {
       const disable = document.querySelector(".block-3");
-      disable.setAttribute("style", "pointer-events:none;");
-    } else if (board[4] === "X" || board[4] === "O" ) {
+      disable.id = "block-disabled";
+    } else if (board[4] === "X" || board[4] === "O") {
       const disable = document.querySelector(".block-4");
-      disable.setAttribute("style", "pointer-events:none;");
-    } else if (board[5] === "X" || board[5] === "O" ) {
+      disable.id = "block-disabled";
+    } else if (board[5] === "X" || board[5] === "O") {
       const disable = document.querySelector(".block-5");
-      disable.setAttribute("style", "pointer-events:none;");
-    } else if (board[6] === "X" || board[6] === "O" ) {
+      disable.id = "block-disabled";
+    } else if (board[6] === "X" || board[6] === "O") {
       const disable = document.querySelector(".block-6");
-      disable.setAttribute("style", "pointer-events:none;");
-    } else if (board[7] === "X" || board[7] === "O" ) {
+      disable.id = "block-disabled";
+    } else if (board[7] === "X" || board[7] === "O") {
       const disable = document.querySelector(".block-7");
-      disable.setAttribute("style", "pointer-events:none;");
-    } else if (board[8] === "X" || board[8] === "O" ) {
+      disable.id = "block-disabled";
+    } else if (board[8] === "X" || board[8] === "O") {
       const disable = document.querySelector(".block-8");
-      disable.setAttribute("style", "pointer-events:none;");
+      disable.id = "block-disabled";
     }
   };
   return {
     board,
     generateBoard,
     winnerCheck,
+    preventDuplicate,
   };
 })();
 
@@ -275,8 +278,7 @@ function test0() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
-  const disable = document.querySelector(".block-0");
-  disable.setAttribute("style", "pointer-events:none;");
+  gameBoard.preventDuplicate();
   gameBoard.winnerCheck();
 }
 
@@ -287,6 +289,7 @@ function test1() {
   container.replaceChildren();
   gameBoard.generateBoard();
   gameController.changeTurn();
+  gameBoard.preventDuplicate();
   gameBoard.winnerCheck();
 }
 
