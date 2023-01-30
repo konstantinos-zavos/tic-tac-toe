@@ -275,7 +275,9 @@ gameBoard.winnerCheck();
 
 const gameController = (() => {
   const player = ["X", "O"];
-  const names = ["Jim", "Bob"];
+  const names = [" ", " "];
+  names[0] = prompt("Player 1 name?");
+  names[1] = prompt("Player 2 name?");
   let activePlayer = player[0];
   let activePlayerName = names[0];
   const container = document.querySelector("body");
