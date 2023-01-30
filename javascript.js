@@ -276,6 +276,7 @@ gameBoard.winnerCheck();
 // Idea 1: Freeze gameboard on a good looking state, blurry background and add a PLAY GAME button in the middle
 // Which is going to start the game, so I might have to change names logic to only accept player names after the game has started
 // Also display:none, on left and right player divs (also just had an idea of animated series, for example when the bot is about to lose, show robot sweating etc)
+// Idea 2: Freeze gameboard like idea one, but instead fit the players and start button inside of the gameboard container on top of it z index (3D LAYERS idea)
 
 const gameController = (() => {
   const player = ["X", "O"];
