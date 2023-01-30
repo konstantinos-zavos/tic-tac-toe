@@ -14,36 +14,50 @@ const bob = Player("Bob", "O");
 
 const gameBoard = (() => {
   const board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
-  
+
   const playerOneWon = () => {
     const container = document.querySelector(".game-container");
-      container.setAttribute(
-        "style",
-        "animation-name: myAnimation;animation-duration: 5000ms;animation-fill-mode: forwards;"
-      );
-      const body = document.querySelector("body");
-      const block = document.createElement("div");
-      block.id = "test-block";
-      block.textContent = "Player 1 won!";
-      const removeTurn = document.querySelector("#active-player");
-      removeTurn.setAttribute("style", "display:none;");
-      body.appendChild(block);
-  }
+    container.setAttribute(
+      "style",
+      "animation-name: myAnimation;animation-duration: 5000ms;animation-fill-mode: forwards;"
+    );
+    const body = document.querySelector("body");
+    const block = document.createElement("div");
+    block.id = "test-block";
+    block.textContent = "Player 1 won!";
+    const removeTurn = document.querySelector("#active-player");
+    removeTurn.setAttribute("style", "display:none;");
+    body.appendChild(block);
+
+    const testBlockDiv = document.querySelector("#test-block");
+    const button = document.createElement("button");
+    button.textContent = "Play again?";
+    button.setAttribute("onClick", "window.location.reload();");
+    testBlockDiv.appendChild(button);
+    console.log("Player 1 won");
+  };
 
   const playerTwoWon = () => {
     const container = document.querySelector(".game-container");
-      container.setAttribute(
-        "style",
-        "animation-name: myAnimation;animation-duration: 5000ms;animation-fill-mode: forwards;"
-      );
-      const body = document.querySelector("body");
-      const block = document.createElement("div");
-      block.id = "test-block";
-      block.textContent = "Player 2 won!";
-      const removeTurn = document.querySelector("#active-player");
-      removeTurn.setAttribute("style", "display:none;");
-      body.appendChild(block);
-  }
+    container.setAttribute(
+      "style",
+      "animation-name: myAnimation;animation-duration: 5000ms;animation-fill-mode: forwards;"
+    );
+    const body = document.querySelector("body");
+    const block = document.createElement("div");
+    block.id = "test-block";
+    block.textContent = "Player 2 won!";
+    const removeTurn = document.querySelector("#active-player");
+    removeTurn.setAttribute("style", "display:none;");
+    body.appendChild(block);
+
+    const testBlockDiv = document.querySelector("#test-block");
+    const button = document.createElement("button");
+    button.textContent = "Play again?";
+    button.setAttribute("onClick", "window.location.reload();");
+    testBlockDiv.appendChild(button);
+    console.log("Player 2 won");
+  };
 
   const generateBoard = () => {
     let i = 0;
@@ -242,6 +256,7 @@ const gameBoard = (() => {
       const testBlockDiv = document.querySelector("#test-block");
       const button = document.createElement("button");
       button.textContent = "Play again?";
+      button.setAttribute("onClick", "window.location.reload();");
       testBlockDiv.appendChild(button);
       console.log("It's a draw bro!");
     }
