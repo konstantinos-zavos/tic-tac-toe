@@ -245,7 +245,6 @@ function test0() {
   getBlock.textContent = playerToken;
   getBlock.id = "block-disabled";
   gameController.changeTurn();
-  gameBoard.preventDuplicate();
   gameBoard.winnerCheck();
 }
 
@@ -256,7 +255,6 @@ function test1() {
   getBlock.textContent = playerToken;
   getBlock.id = "block-disabled";
   gameController.changeTurn();
-  gameBoard.preventDuplicate();
   gameBoard.winnerCheck();
 }
 
