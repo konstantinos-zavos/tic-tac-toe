@@ -12,6 +12,11 @@ const Player = (name, symbol) => {
 const jim = Player("Jim", "X");
 const bob = Player("Bob", "O");
 
+
+// block.textContent = board[i];
+// block.setAttribute("onclick", `test${i}()`);
+// Goal : otan o user kanei click sto element tote 
+
 const gameBoard = (() => {
   const board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
   const generateBoard = () => {
@@ -21,12 +26,41 @@ const gameBoard = (() => {
       const block = document.createElement("div");
       block.id = "block";
       block.setAttribute("class", `block-${i}`);
-      block.textContent = board[i];
       block.setAttribute("onclick", `test${i}()`);
       container.appendChild(block);
       i += 1;
     }
   };
+  // const placeSymbol = () => {
+  //   if (board[0] === "X" || board[0] === "O") {
+  //     const block = document.querySelector(".block-0");
+  //     block.textContent = gameBoard.board[0];
+  //   } else if (board[1] === "X" || board[1] === "O") {
+  //     const block = document.querySelector(".block-1");
+  //     block.textContent = board[1];
+  //   } else if (board[2] === "X" || board[2] === "O") {
+  //     const block = document.querySelector(".block-2");
+  //     block.textContent = board[2];
+  //   } else if (board[3] === "X" || board[3] === "O") {
+  //     const block = document.querySelector(".block-3");
+  //     block.textContent = board[3];
+  //   } else if (board[4] === "X" || board[4] === "O") {
+  //     const block = document.querySelector(".block-4");
+  //     block.textContent = board[4];
+  //   } else if (board[5] === "X" || board[5] === "O") {
+  //     const block = document.querySelector(".block-5");
+  //     block.textContent = board[5];
+  //   } else if (board[6] === "X" || board[6] === "O") {
+  //     const block = document.querySelector(".block-6");
+  //     block.textContent = board[6];
+  //   } else if (board[7] === "X" || board[7] === "O") {
+  //     const block = document.querySelector(".block-7");
+  //     block.textContent = board[7];
+  //   } else if (board[8] === "X" || board[8] === "O") {
+  //     const block = document.querySelector(".block-8");
+  //     block.textContent = board[8];
+  //   }
+  // };
   const winnerCheck = () => {
     // x row
     if (board[0] === "X" && board[1] === "X" && board[2] === "X") {
@@ -200,42 +234,41 @@ const gameBoard = (() => {
       console.log("It's a draw bro!");
     }
   };
-  const preventDuplicate = () => {
-    // Prevent symbol change
-    if (board[0] === "X" || board[0] === "O") {
-      const disable = document.querySelector(".block-0");
-      disable.id = "block-disabled";
-    } else if (board[1] === "X" || board[1] === "O") {
-      const disable = document.querySelector(".block-1");
-      disable.id = "block-disabled";
-    } else if (board[2] === "X" || board[2] === "O") {
-      const disable = document.querySelector(".block-2");
-      disable.id = "block-disabled";
-    } else if (board[3] === "X" || board[3] === "O") {
-      const disable = document.querySelector(".block-3");
-      disable.id = "block-disabled";
-    } else if (board[4] === "X" || board[4] === "O") {
-      const disable = document.querySelector(".block-4");
-      disable.id = "block-disabled";
-    } else if (board[5] === "X" || board[5] === "O") {
-      const disable = document.querySelector(".block-5");
-      disable.id = "block-disabled";
-    } else if (board[6] === "X" || board[6] === "O") {
-      const disable = document.querySelector(".block-6");
-      disable.id = "block-disabled";
-    } else if (board[7] === "X" || board[7] === "O") {
-      const disable = document.querySelector(".block-7");
-      disable.id = "block-disabled";
-    } else if (board[8] === "X" || board[8] === "O") {
-      const disable = document.querySelector(".block-8");
-      disable.id = "block-disabled";
-    }
-  };
+  // const preventDuplicate = () => {
+  //   // Prevent symbol change
+  // //   if (board[0] === "X" || board[0] === "O") {
+  // //     const disable = document.querySelector(".block-0");
+  // //     disable.id = "block-disabled";
+  // //   } else if (board[1] === "X" || board[1] === "O") {
+  // //     const disable = document.querySelector(".block-1");
+  // //     disable.id = "block-disabled";
+  // //   } else if (board[2] === "X" || board[2] === "O") {
+  // //     const disable = document.querySelector(".block-2");
+  // //     disable.id = "block-disabled";
+  // //   } else if (board[3] === "X" || board[3] === "O") {
+  // //     const disable = document.querySelector(".block-3");
+  // //     disable.id = "block-disabled";
+  // //   } else if (board[4] === "X" || board[4] === "O") {
+  // //     const disable = document.querySelector(".block-4");
+  // //     disable.id = "block-disabled";
+  // //   } else if (board[5] === "X" || board[5] === "O") {
+  // //     const disable = document.querySelector(".block-5");
+  // //     disable.id = "block-disabled";
+  // //   } else if (board[6] === "X" || board[6] === "O") {
+  // //     const disable = document.querySelector(".block-6");
+  // //     disable.id = "block-disabled";
+  // //   } else if (board[7] === "X" || board[7] === "O") {
+  // //     const disable = document.querySelector(".block-7");
+  // //     disable.id = "block-disabled";
+  // //   } else if (board[8] === "X" || board[8] === "O") {
+  // //     const disable = document.querySelector(".block-8");
+  // //     disable.id = "block-disabled";
+  // //   }
+  // };
   return {
     board,
     generateBoard,
     winnerCheck,
-    preventDuplicate,
   };
 })();
 
@@ -274,9 +307,9 @@ gameController.ShowActivePlayerName();
 function test0() {
   const playerToken = gameController.getActivePlayer();
   gameBoard.board[0] = playerToken;
-  const container = document.querySelector(".game-container");
-  container.replaceChildren();
-  gameBoard.generateBoard();
+  const getBlock = document.querySelector(".block-0");
+  getBlock.textContent = playerToken;
+  getBlock.id = "block-disabled";
   gameController.changeTurn();
   gameBoard.preventDuplicate();
   gameBoard.winnerCheck();
@@ -285,9 +318,9 @@ function test0() {
 function test1() {
   const playerToken = gameController.getActivePlayer();
   gameBoard.board[1] = playerToken;
-  const container = document.querySelector(".game-container");
-  container.replaceChildren();
-  gameBoard.generateBoard();
+  const getBlock = document.querySelector(".block-1");
+  getBlock.textContent = playerToken;
+  getBlock.id = "block-disabled";
   gameController.changeTurn();
   gameBoard.preventDuplicate();
   gameBoard.winnerCheck();
@@ -296,9 +329,9 @@ function test1() {
 function test2() {
   const playerToken = gameController.getActivePlayer();
   gameBoard.board[2] = playerToken;
-  const container = document.querySelector(".game-container");
-  container.replaceChildren();
-  gameBoard.generateBoard();
+  const getBlock = document.querySelector(".block-2");
+  getBlock.textContent = playerToken;
+  getBlock.id = "block-disabled";
   gameController.changeTurn();
   gameBoard.winnerCheck();
 }
@@ -306,9 +339,9 @@ function test2() {
 function test3() {
   const playerToken = gameController.getActivePlayer();
   gameBoard.board[3] = playerToken;
-  const container = document.querySelector(".game-container");
-  container.replaceChildren();
-  gameBoard.generateBoard();
+  const getBlock = document.querySelector(".block-3");
+  getBlock.textContent = playerToken;
+  getBlock.id = "block-disabled";
   gameController.changeTurn();
   gameBoard.winnerCheck();
 }
@@ -316,9 +349,9 @@ function test3() {
 function test4() {
   const playerToken = gameController.getActivePlayer();
   gameBoard.board[4] = playerToken;
-  const container = document.querySelector(".game-container");
-  container.replaceChildren();
-  gameBoard.generateBoard();
+  const getBlock = document.querySelector(".block-4");
+  getBlock.textContent = playerToken;
+  getBlock.id = "block-disabled";
   gameController.changeTurn();
   gameBoard.winnerCheck();
 }
@@ -326,9 +359,9 @@ function test4() {
 function test5() {
   const playerToken = gameController.getActivePlayer();
   gameBoard.board[5] = playerToken;
-  const container = document.querySelector(".game-container");
-  container.replaceChildren();
-  gameBoard.generateBoard();
+  const getBlock = document.querySelector(".block-5");
+  getBlock.textContent = playerToken;
+  getBlock.id = "block-disabled";
   gameController.changeTurn();
   gameBoard.winnerCheck();
 }
@@ -336,9 +369,9 @@ function test5() {
 function test6() {
   const playerToken = gameController.getActivePlayer();
   gameBoard.board[6] = playerToken;
-  const container = document.querySelector(".game-container");
-  container.replaceChildren();
-  gameBoard.generateBoard();
+  const getBlock = document.querySelector(".block-6");
+  getBlock.textContent = playerToken;
+  getBlock.id = "block-disabled";
   gameController.changeTurn();
   gameBoard.winnerCheck();
 }
@@ -346,9 +379,9 @@ function test6() {
 function test7() {
   const playerToken = gameController.getActivePlayer();
   gameBoard.board[7] = playerToken;
-  const container = document.querySelector(".game-container");
-  container.replaceChildren();
-  gameBoard.generateBoard();
+  const getBlock = document.querySelector(".block-7");
+  getBlock.textContent = playerToken;
+  getBlock.id = "block-disabled";
   gameController.changeTurn();
   gameBoard.winnerCheck();
 }
@@ -356,9 +389,9 @@ function test7() {
 function test8() {
   const playerToken = gameController.getActivePlayer();
   gameBoard.board[8] = playerToken;
-  const container = document.querySelector(".game-container");
-  container.replaceChildren();
-  gameBoard.generateBoard();
+  const getBlock = document.querySelector(".block-8");
+  getBlock.textContent = playerToken;
+  getBlock.id = "block-disabled";
   gameController.changeTurn();
   gameBoard.winnerCheck();
 }
