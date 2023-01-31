@@ -281,8 +281,16 @@ gameBoard.winnerCheck();
 const gameController = (() => {
   const player = ["X", "O"];
   const names = [" ", " "];
-  names[0] = prompt("Player 1 name?");
-  names[1] = prompt("Player 2 name?");
+  // names[0] = prompt("Player 1 name?");   <---- ASSIGN THIS TO THE TEXT CONTENT OF THE FORM
+  // names[1] = prompt("Player 2 name?");
+  names[0] = "Player 1";
+  names[1] = "Player 2";
+  const changeName = () => {
+    names[0] = document.querySelector("#player-one-name").value;
+    activePlayer = player[0];
+    activePlayerName = names[0];
+    block.textContent = `${activePlayerName}'s turn`;
+  }
   let activePlayer = player[0];
   let activePlayerName = names[0];
   const container = document.querySelector(".score-display");
@@ -304,6 +312,7 @@ const gameController = (() => {
     ShowActivePlayerName,
     changeTurn,
     getActivePlayer,
+    changeName,
   };
 })();
 

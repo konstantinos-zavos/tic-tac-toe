@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="./javascript.js" defer></script>
     <title>Template</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="score-display">
-        <p id="arrPrint">
-
-        </p>
+      <p id="arrPrint"></p>
     </div>
     <div class="main">
-    <div class="player-one-window">
+      <div class="player-one-window">
+        <form action="sumbit">
+          <label for="player_one">Player 1:</label>
+          <input type="text" id="player-one-name" placeholder="Player 1" />
+        </form>
+        <button onclick="gameController.changeName();">Change Name</button>
+      </div>
+      <div class="game-container"></div>
+      <div class="player-two-window">
         <button>Placeholder</button>
+      </div>
     </div>
-    <div class="game-container">
-    </div>
-    <div class="player-two-window">
-        <button>Placeholder</button>
-    </div>
-</div>
-</body>
+  </body>
 </html>
