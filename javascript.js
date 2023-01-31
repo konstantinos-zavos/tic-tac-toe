@@ -278,6 +278,8 @@ gameBoard.winnerCheck();
 // Also display:none, on left and right player divs (also just had an idea of animated series, for example when the bot is about to lose, show robot sweating etc)
 // Idea 2: Freeze gameboard like idea one, but instead fit the players and start button inside of the gameboard container on top of it z index (3D LAYERS idea)
 
+// Notes to future self: There are no problems with the logic but my factorial function for player isn't used, so I could probably change some code to make it usefull
+
 const gameController = (() => {
   const player = ["X", "O"];
   const names = [" ", " "];
