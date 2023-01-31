@@ -24,7 +24,7 @@ const gameBoard = (() => {
     const body = document.querySelector("body");
     const block = document.createElement("div");
     block.id = "test-block";
-    block.textContent = "Player 1 won!";
+    block.textContent = `${gameController.names[0]} is the winner!`;
     const removeTurn = document.querySelector("#active-player");
     removeTurn.setAttribute("style", "display:none;");
     body.appendChild(block);
@@ -46,7 +46,7 @@ const gameBoard = (() => {
     const body = document.querySelector("body");
     const block = document.createElement("div");
     block.id = "test-block";
-    block.textContent = "Player 2 won!";
+    block.textContent = `${gameController.names[1]} is the winner!`;
     const removeTurn = document.querySelector("#active-player");
     removeTurn.setAttribute("style", "display:none;");
     body.appendChild(block);
@@ -278,7 +278,7 @@ gameBoard.winnerCheck();
 // Also display:none, on left and right player divs (also just had an idea of animated series, for example when the bot is about to lose, show robot sweating etc)
 // Idea 2: Freeze gameboard like idea one, but instead fit the players and start button inside of the gameboard container on top of it z index (3D LAYERS idea)
 
-// Notes to future self: There are no problems with the logic but my factorial function for players construction isn't used, so I could probably change some code to make it usefull 
+// Notes to future self: There are no problems with the logic but my factorial function for players construction isn't used, so I could probably change some code to make it usefull
 // Combine the two change name buttons into a start game button in the middle of the gameboard
 
 const gameController = (() => {
@@ -291,10 +291,10 @@ const gameController = (() => {
     activePlayer = player[0];
     activePlayerName = names[0];
     block.textContent = `${activePlayerName}'s turn`;
-  }
+  };
   const changeNameP2 = () => {
     names[1] = document.querySelector("#player-two-name").value;
-  }
+  };
   let activePlayer = player[0];
   let activePlayerName = names[0];
   const container = document.querySelector(".score-display");
@@ -322,6 +322,7 @@ const gameController = (() => {
     getActivePlayer,
     changeNameP1,
     changeNameP2,
+    names,
   };
 })();
 
