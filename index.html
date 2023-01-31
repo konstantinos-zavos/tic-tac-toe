@@ -18,11 +18,15 @@
           <label for="player_one">Player 1:</label>
           <input type="text" id="player-one-name" placeholder="Player 1" />
         </form>
-        <button onclick="gameController.changeName();">Change Name</button>
+        <button onclick="gameController.changeNameP1();">Change Name</button>
       </div>
       <div class="game-container"></div>
       <div class="player-two-window">
-        <button>Placeholder</button>
+        <form action="sumbit">
+          <label for="player_two">Player 2:</label>
+          <input type="text" id="player-two-name" placeholder="Player 2" />
+        </form>
+        <button onclick="gameController.changeNameP2();">Change Name</button>
       </div>
     </div>
   </body>

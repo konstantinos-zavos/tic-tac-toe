@@ -285,11 +285,14 @@ const gameController = (() => {
   // names[1] = prompt("Player 2 name?");
   names[0] = "Player 1";
   names[1] = "Player 2";
-  const changeName = () => {
+  const changeNameP1 = () => {
     names[0] = document.querySelector("#player-one-name").value;
     activePlayer = player[0];
     activePlayerName = names[0];
     block.textContent = `${activePlayerName}'s turn`;
+  }
+  const changeNameP2 = () => {
+    names[1] = document.querySelector("#player-two-name").value;
   }
   let activePlayer = player[0];
   let activePlayerName = names[0];
@@ -312,7 +315,8 @@ const gameController = (() => {
     ShowActivePlayerName,
     changeTurn,
     getActivePlayer,
-    changeName,
+    changeNameP1,
+    changeNameP2,
   };
 })();
 
