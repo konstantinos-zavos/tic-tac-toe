@@ -281,8 +281,6 @@ gameBoard.winnerCheck();
 const gameController = (() => {
   const player = ["X", "O"];
   const names = [" ", " "];
-  // names[0] = prompt("Player 1 name?");   <---- ASSIGN THIS TO THE TEXT CONTENT OF THE FORM
-  // names[1] = prompt("Player 2 name?");
   names[0] = "Player 1";
   names[1] = "Player 2";
   const changeNameP1 = () => {
@@ -304,6 +302,10 @@ const gameController = (() => {
     activePlayerName = activePlayerName === names[0] ? names[1] : names[0];
     block.textContent = `${activePlayerName}'s turn`;
     container.appendChild(block);
+    const hideLeft = document.querySelector(".player-one-window");
+    hideLeft.id = "ui-hidden";
+    const hideRight = document.querySelector(".player-two-window");
+    hideRight.id = "ui-hidden";
   };
   const getActivePlayer = () => activePlayer;
 

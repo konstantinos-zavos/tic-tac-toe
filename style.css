@@ -127,3 +127,7 @@ body {
 button {
     padding: 10px;
 }
+
+#ui-hidden {
+  display: none;
+}
