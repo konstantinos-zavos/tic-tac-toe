@@ -296,6 +296,8 @@ const gameController = (() => {
   };
   const changeNameP2 = () => {
     names[1] = document.querySelector("#player-two-name").value;
+    let player2 = document.querySelector(".player2-name");
+    player2.textContent = names[1];
   };
   let activePlayer = player[0];
   let activePlayerName = names[0];
