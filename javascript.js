@@ -291,6 +291,8 @@ const gameController = (() => {
     activePlayer = player[0];
     activePlayerName = names[0];
     block.textContent = `${activePlayerName}'s turn`;
+    let player1 = document.querySelector(".player1-name");
+    player1.textContent = names[0];
   };
   const changeNameP2 = () => {
     names[1] = document.querySelector("#player-two-name").value;
